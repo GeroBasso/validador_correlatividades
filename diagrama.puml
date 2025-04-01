@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Alumno {
+ - nombre :: String
+ -legajo :: String
+ -materiasAprobadas :: set<Materia>
+
+ +aprobo(Materia) :: Boolean
+ +getMateriasAprobadas() :: Set<Materia>
+
+}
+
+class Inscripcion {
+-alumno :: String
+-materiasInscriptas :: Set<Materia>
+
++aprobada() :: Boolean
+}
+
+class Materia {
+-correlativas :: Set<Materia>
+-nombre :: String
+
++cumpleCorrelativas(Set<Materia>) :: Boolean
++getCorrelativas() :: List<Materia>
+}
+
+Inscripcion -> Materia
+Inscripcion -> Alumno
+Alumno -> Materia
+Materia -> Materia
+
+
+@enduml
