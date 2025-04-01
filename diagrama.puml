@@ -32,4 +32,5 @@ Alumno -> Materia
 Materia -> Materia
 
 
+
 @enduml
